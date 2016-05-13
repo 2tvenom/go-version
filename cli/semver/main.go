@@ -33,12 +33,12 @@ func main() {
 
 	switch args[0] {
 	case GET_RELEASE:
-		fmt.Println(version.Prerelease())
+		fmt.Print(version.Prerelease())
 	case GET_VERSION:
 		segments:= version.Segments()
-		fmt.Printf("%d.%d.%d\n", segments[0], segments[1], segments[2])
+		fmt.Printf("%d.%d.%d", segments[0], segments[1], segments[2])
 	case GET_META:
-		fmt.Println(version.Metadata())
+		fmt.Print(version.Metadata())
 	default:
 		log.Fatalln("Incorrect command")
 	}
